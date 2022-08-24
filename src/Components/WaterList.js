@@ -3,7 +3,7 @@ import Card from './Card';
 
 function WaterList(props) {
     return (
-        <div>
+        <div className="row">
             { 
                 props.levels.map(item => (
                     <Card updateDate={ item.updateDate } level={ item.level } unitCode={ props.unitCode } />

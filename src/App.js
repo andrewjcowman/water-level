@@ -19,11 +19,11 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <div style={{ width:"100%", padding:"15px" }}>Mean Daily Depth of { site.siteName }</div>
+    <div className="App container-fluid">
+      <div className="col-xs-12" style={{ padding:"15px", fontSize:"24px" }}>Mean Daily Depth of { site.siteName }</div>
       <WaterList unitCode={ site.unitCode } levels={ site.levels } />
     </div>
   );
 }
-
+//<div style={{ width:"100%", padding:"15px", boxSizing: "border-box", fontSize:"24px" }}>Mean Daily Depth of { site.siteName }</div>
 export default App;
