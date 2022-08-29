@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './Card';
 
-function WaterList(props) {
+function LevelsList(props) {
     return (
         <div className="row">
             { 
@@ -10,7 +10,7 @@ function WaterList(props) {
                 ))
             }
         </div>
-    )
+    );
 }
 
-export default WaterList;
+export default LevelsList;
