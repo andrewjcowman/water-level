@@ -17,12 +17,18 @@ function MainPage() {
             )
     }, []);
 
-    return (
-        <div>
-            <div className="col-xs-12" style={{ padding:"15px", fontSize:"24px" }}>Choose a Site</div>
-            <SiteList sites={ sites } />
-        </div>
-    )
+    if(error) {
+        return (
+            <div>An error has occurred: { error.message }</div>
+        )
+    } else {
+        return (
+            <div style={{ padding:"15px" }}>
+                <div className="col-xs-12" style={{ marginBottom:"15px", fontSize:"24px" }}>Sites</div>
+                <SiteList sites={ sites } />
+            </div>
+        )
+    }
 }
 
 export default MainPage;
