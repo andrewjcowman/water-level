@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import WaterList from '../Components/LevelsList';
 
 function LevelsPage() {
@@ -20,12 +20,19 @@ function LevelsPage() {
             )
     }, []);
 
-    return (
-        <div>
-            <div className="col-xs-12" style={{ padding:"15px", fontSize:"24px" }}>Daily Mean Value of { site.siteName }</div>
-            <WaterList levels={ site.levels } unitCode={ site.unitCode } />
-        </div>
-    );
+    if(error) {
+        return (
+            <div>An error has occurred: { error.message }</div>
+        );
+    } else {
+        return (
+            <div style={{ padding:"15px" }}>
+                <div className="col-xs-12" style={{ fontSize:"24px", marginBottom:"25px" }}>Daily Mean Depth of { site.siteName }</div>
+                <WaterList levels={ site.levels } unitCode={ site.unitCode } />
+                <Link to={ '/' }>Back to home</Link>
+            </div>
+        );
+    }
 }
 
 export default LevelsPage;

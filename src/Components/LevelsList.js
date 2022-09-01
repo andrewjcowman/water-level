@@ -6,7 +6,7 @@ function LevelsList(props) {
         <div className="row">
             { 
                 props.levels.map(item => (
-                    <Card updateDate={ item.updateDate } level={ item.level } unitCode={ props.unitCode } />
+                    <Card key={ item.updateDate } updateDate={ item.updateDate } level={ item.level } unitCode={ props.unitCode } />
                 ))
             }
         </div>
